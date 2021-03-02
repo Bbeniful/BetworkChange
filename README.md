@@ -3,6 +3,10 @@
 This is a simple network listener for android. You have 2 options how would you like to watch the statesd
 Firs option with listener:
 
+Requirements:
+- android 5.0 and above
+- AndroidX
+
 You need to add this Listener.
 
 Activity:
@@ -87,6 +91,6 @@ You also able to get the netwrok type as you can see above. There is the type de
 ```
 
 
-Feel free to use it and give me some feedback if you wind something wrong or you can imprtove just make a pull request.
+Feel free to use it and give me some feedback if you find something wrong or just create a pull request.
 
 

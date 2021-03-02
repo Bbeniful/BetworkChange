@@ -65,7 +65,7 @@ class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
 }
 ```
 
-##You can also use LiveData this way:
+## You can also use LiveData this way:
 
 ### Activity:
 ```

@@ -77,9 +77,19 @@ class BetworkChecker : BroadcastReceiver() {
     }
 
     companion object {
-        var type: NetworkType = NetworkType.NONE
-        var connectivityReceiverListener: ConnectivityReceiverListener? = null
-        var betWorkLiveCheck = MutableLiveData<Boolean>()
-        var betWorkLiveType = MutableLiveData<NetworkType>()
+        private var type: NetworkType = NetworkType.NONE
+        private var connectivityReceiverListener: ConnectivityReceiverListener? = null
+        private var betWorkLiveCheck = MutableLiveData<Boolean>()
+        private var betWorkLiveType = MutableLiveData<NetworkType>()
+
+        fun getNetworkStateAsLiveData() = this.betWorkLiveCheck
+
+        fun getNetworkTypeAsLiveData() = this.betWorkLiveType
+
+        fun getConnectionListener() = this.connectivityReceiverListener
+
+        fun setConnectionListener(connectivityReceiverListener: ConnectivityReceiverListener) {
+            this.connectivityReceiverListener = connectivityReceiverListener
+        }
     }
 }

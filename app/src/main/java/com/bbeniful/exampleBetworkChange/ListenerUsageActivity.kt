@@ -1,12 +1,11 @@
 package com.bbeniful.exampleBetworkChange
 
-import android.content.IntentFilter
-import android.net.ConnectivityManager
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bbeniful.betworklistener.enums.NetworkType
 import com.bbeniful.betworklistener.listener.BetworkChecker
+import com.bbeniful.betworklistener.listener.BetworkRegister
 import com.bbeniful.exampleBetworkChange.databinding.ActivityListenerBinding
 
 class ListenerUsageActivity : AppCompatActivity(), BetworkChecker.ConnectivityReceiverListener {
@@ -18,7 +17,10 @@ class ListenerUsageActivity : AppCompatActivity(), BetworkChecker.ConnectivityRe
         biding = ActivityListenerBinding.inflate(layoutInflater)
         setContentView(biding.root)
 
-        registerReceiver(BetworkChecker(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+        // registerReceiver(BetworkChecker(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+        BetworkRegister.registerBetwork(this)
+
+
     }
 
     override fun onResume() {
@@ -26,7 +28,7 @@ class ListenerUsageActivity : AppCompatActivity(), BetworkChecker.ConnectivityRe
         /**
          * You need to initialise the listener
          * **/
-        BetworkChecker.connectivityReceiverListener = this
+        BetworkChecker.setConnectionListener(this)
     }
 
 

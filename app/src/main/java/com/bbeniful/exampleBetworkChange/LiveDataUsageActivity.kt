@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.bbeniful.betworklistener.listener.BetworkChecker
-import com.bbeniful.betworklistener.listener.BetworkChecker.Companion.type
+import com.bbeniful.betworklistener.listener.BetworkRegister
 import com.bbeniful.exampleBetworkChange.databinding.ActivityLiveDataBinding
 
 class LiveDataUsageActivity : AppCompatActivity() {
@@ -20,19 +20,18 @@ class LiveDataUsageActivity : AppCompatActivity() {
         /**
          * You need to register this receiver
          * **/
-        registerReceiver(
-            BetworkChecker(),
-            IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
-        )
+        BetworkRegister.registerBetwork(this)
+
         /**
          * This is how you can subscribe for live data and use the result
          * **/
-        BetworkChecker.betWorkLiveCheck.observe(this, {
+
+        BetworkChecker.getNetworkStateAsLiveData().observe(this, {
             biding.liveDataText.text = getString(R.string.network_state, it)
         })
 
-        BetworkChecker.betWorkLiveType.observe(this, {
-            Toast.makeText(applicationContext,"$type",Toast.LENGTH_SHORT).show()
+        BetworkChecker.getNetworkTypeAsLiveData().observe(this, { type ->
+            Toast.makeText(applicationContext, "$type", Toast.LENGTH_SHORT).show()
         })
     }
 }

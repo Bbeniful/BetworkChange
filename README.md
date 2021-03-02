@@ -3,13 +3,13 @@
 This is a simple network listener for android. You have 2 options how would you like to watch the statesd
 Firs option with listener:
 
-##Requirements:
+## Requirements:
 - android 5.0 and above
 - AndroidX
 
 You need to add this Listener.
 
-##Activity:
+## Activity:
 ```
 class MainActivity: AppCompatActivity(),BetworkChecker.ConnectivityReceiverListener {
 
@@ -34,7 +34,7 @@ class MainActivity: AppCompatActivity(),BetworkChecker.ConnectivityReceiverListe
 }
 ```
 
-##Fragment:
+## Fragment:
 ```
 class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
 
@@ -47,7 +47,7 @@ class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
 
 You also can use live data this way:
 
-##Activity:
+## Activity:
 ```
 class MainActivity: AppCompatActivity(){
 
@@ -69,7 +69,7 @@ class MainActivity: AppCompatActivity(){
 }
 ```
 
-##Fragment:
+## Fragment:
 ```
 class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
 

@@ -10,6 +10,8 @@ jobs:
         run: chmod +x gradlew
       #- name: Build the app
       #  run: ./gradlew build
+      - name: Generate build number
+        uses: einaregilsson/build-number@v3
       - name: Build debug apk
         run: ./gradlew clean assembleDebug
       - name: Create release and upload apk
@@ -17,7 +19,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v1.0.0
+          tag_name: v1.0.$BUILD_NUMBER
           asset_path: app/build/outputs/apk/debug/app-debug.apk
           asset_name: betwork_1.0.0.apk
           asset_content_type: application/zip

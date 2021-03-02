@@ -94,9 +94,26 @@ class MainActivity: AppCompatActivity(){
 ```
 class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
 
-  override fun onResume() {
+     override fun onCreateView(
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+        //
+
+         BetworkChecker.getNetworkStateAsLiveData().observe(this, {it: Boolean->
+              biding.liveDataText.text = getString(R.string.network_state, it)
+          })
+
+          BetworkChecker.getNetworkTypeAsLiveData().observe(this, { type: NetwortkType ->
+                  Toast.makeText(applicationContext, "$type", Toast.LENGTH_SHORT).show()
+          })
+
+        }
+
+    override fun onResume() {
            super.onResume()
-           BetworkChecker.setConnectionListener(this)
+           BetworkRegister.registerBetwork(this)
         }
 }
 ```

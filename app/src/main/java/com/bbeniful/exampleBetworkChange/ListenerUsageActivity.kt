@@ -16,11 +16,7 @@ class ListenerUsageActivity : AppCompatActivity(), BetworkChecker.ConnectivityRe
         super.onCreate(savedInstanceState)
         biding = ActivityListenerBinding.inflate(layoutInflater)
         setContentView(biding.root)
-
-        // registerReceiver(BetworkChecker(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
         BetworkRegister.registerBetwork(this)
-
-
     }
 
     override fun onResume() {
@@ -42,4 +38,6 @@ class ListenerUsageActivity : AppCompatActivity(), BetworkChecker.ConnectivityRe
     override fun getNetworkType(type: NetworkType) {
         Toast.makeText(applicationContext, "$type", Toast.LENGTH_SHORT).show()
     }
+
+
 }

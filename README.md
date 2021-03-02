@@ -27,9 +27,9 @@ Step 2. Add the dependency
 	}
 ```
 
-### First option with listener,you need to add this Listener.
+## First option with listener,you need to add this Listener.
 
-## Activity:
+### Activity:
 ```
 class MainActivity: AppCompatActivity(),BetworkChecker.ConnectivityReceiverListener {
 
@@ -54,7 +54,7 @@ class MainActivity: AppCompatActivity(),BetworkChecker.ConnectivityReceiverListe
 }
 ```
 
-## Fragment:
+### Fragment:
 ```
 class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
 
@@ -65,9 +65,9 @@ class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
 }
 ```
 
-### You can also use LiveData this way:
+##You can also use LiveData this way:
 
-## Activity:
+### Activity:
 ```
 class MainActivity: AppCompatActivity(){
 
@@ -89,7 +89,7 @@ class MainActivity: AppCompatActivity(){
 }
 ```
 
-## Fragment:
+### Fragment:
 ```
 class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
 

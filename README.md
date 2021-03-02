@@ -3,10 +3,11 @@
 This is a simple network listener for android. You have 2 options how would you like to watch the statesd
 Firs option with listener:
 
-You need to add this Listener
+You need to add this Listener.
 
 Activity:
-```class MainActivity: AppCompatActivity(),BetworkChecker.ConnectivityReceiverListener {
+```
+class MainActivity: AppCompatActivity(),BetworkChecker.ConnectivityReceiverListener {
 
 
      override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,10 +30,12 @@ Activity:
          TODO("Not yet implemented")
      }
 
-}```
+}
+```
 
 Fragment:
-```class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
+```
+class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
 
 
 
@@ -41,6 +44,7 @@ Fragment:
            BetworkChecker.setConnectionListener(this)
         }
 
-}```
+}
+```
 
 

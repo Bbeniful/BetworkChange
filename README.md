@@ -1,7 +1,7 @@
 # BetworkChange
 
-This is a simple network listener for android. You have 2 options how you would like to watch the states of network.
-First option with listener:
+This is a simple network state listener for Android. You have 2 options how you would like to watch the states of network.
+
 
 ## Requirements:
 - android 5.0 and above
@@ -26,6 +26,8 @@ Step 2. Add the dependency
 	        implementation 'com.github.Bbeniful:BetworkChange:1.0.0'
 	}
 ```
+
+First option with listener:
 You need to add this Listener.
 
 ## Activity:

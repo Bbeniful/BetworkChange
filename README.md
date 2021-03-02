@@ -9,26 +9,58 @@ Activity:
 ```
 class MainActivity: AppCompatActivity(),BetworkChecker.ConnectivityReceiverListener {
 
-
-     override fun onCreate(savedInstanceState: Bundle?) {
+        override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-            biding = ActivityListenerBinding.inflate(layoutInflater)
-            setContentView(biding.root)
+           //
             BetworkRegister.registerBetwork(this)
         }
 
-     override fun onResume() {
+        override fun onResume() {
             super.onResume()
             BetworkChecker.setConnectionListener(this)
         }
 
-      override fun networkConnectionChanged(isConnected: Boolean) {
+        override fun networkConnectionChanged(isConnected: Boolean) {
          TODO("Not yet implemented")
-     }
+        }
 
         override fun getNetworkType(type: NetworkType) {
          TODO("Not yet implemented")
-     }
+       }
+}
+```
+
+Fragment:
+```
+class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
+
+  override fun onResume() {
+           super.onResume()
+           BetworkChecker.setConnectionListener(this)
+        }
+}
+```
+
+You also can use live data this way:
+
+Activity:
+```
+class MainActivity: AppCompatActivity(){
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+           //
+            BetworkRegister.registerBetwork(this)
+
+            BetworkChecker.getNetworkStateAsLiveData().observe(this, {it: Boolean->
+                biding.liveDataText.text = getString(R.string.network_state, it)
+            })
+
+            BetworkChecker.getNetworkTypeAsLiveData().observe(this, { type: NetwortkType ->
+                Toast.makeText(applicationContext, "$type", Toast.LENGTH_SHORT).show()
+            })
+        }
+
 
 }
 ```
@@ -37,14 +69,24 @@ Fragment:
 ```
 class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
 
-
-
   override fun onResume() {
            super.onResume()
            BetworkChecker.setConnectionListener(this)
         }
-
 }
 ```
+
+
+You also able to get the netwrok type as you can see above. There is the type definitions:
+```
+    WIFI,
+    INTERNET,
+    BLUETOOTH,
+    NO_NETWORK,
+    NONE
+```
+
+
+Feel free to use it and give me some feedback if you wind something wrong or you can imprtove just make a pull request.
 
 

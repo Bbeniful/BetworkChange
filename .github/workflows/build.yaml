@@ -21,7 +21,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v1.0.$BUILD_NUMBER
+          tag_name: v1.0.${{ secrets.GITHUB_TOKEN }}
           asset_path: app/build/outputs/apk/debug/app-debug.apk
           asset_name: betwork_1.0.0.apk
           asset_content_type: application/zip

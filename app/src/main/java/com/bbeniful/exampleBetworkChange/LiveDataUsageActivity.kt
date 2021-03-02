@@ -17,8 +17,6 @@ class LiveDataUsageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         biding = ActivityLiveDataBinding.inflate(layoutInflater)
         setContentView(biding.root)
-
-
         /**
          * You need to register this receiver
          * **/
@@ -26,7 +24,6 @@ class LiveDataUsageActivity : AppCompatActivity() {
             BetworkChecker(),
             IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
         )
-
         /**
          * This is how you can subscribe for live data and use the result
          * **/
@@ -37,7 +34,5 @@ class LiveDataUsageActivity : AppCompatActivity() {
         BetworkChecker.betWorkLiveType.observe(this, {
             Toast.makeText(applicationContext,"$type",Toast.LENGTH_SHORT).show()
         })
-
-
     }
 }

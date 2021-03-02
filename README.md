@@ -1,7 +1,7 @@
 # BetworkChange
 
-This is a simple network listener for android. You have 2 options how would you like to watch the statesd
-Firs option with listener:
+This is a simple network listener for android. You have 2 options how you would like to watch the states of network.
+First option with listener:
 
 ## Requirements:
 - android 5.0 and above
@@ -45,7 +45,7 @@ class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
 }
 ```
 
-You also can use live data this way:
+You can also use LiveData this way:
 
 ## Activity:
 ```
@@ -81,7 +81,7 @@ class MyFragment: Fragment(),,BetworkChecker.ConnectivityReceiverListener {
 ```
 
 
-You also able to get the netwrok type as you can see above. There is the type definitions:
+You are also able to get the network types as you can see above. There is the type definitions:
 ```
     WIFI,
     INTERNET,
@@ -89,7 +89,6 @@ You also able to get the netwrok type as you can see above. There is the type de
     NO_NETWORK,
     NONE
 ```
-
 
 Feel free to use it and give me some feedback if you find something wrong or just create a pull request.
 

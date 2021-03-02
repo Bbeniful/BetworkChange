@@ -34,10 +34,10 @@ class ListenerUsageActivity : AppCompatActivity(), BetworkChecker.ConnectivityRe
      * Every time when the network state has changed
      * **/
     override fun networkConnectionChanged(isConnected: Boolean) {
-        biding.listenerText.text = getString(R.string.network_state,"$isConnected")
+        biding.listenerText.text = getString(R.string.network_state, isConnected)
     }
 
     override fun getNetworkType(type: NetworkType) {
-        Toast.makeText(applicationContext,"$type",Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, "$type", Toast.LENGTH_SHORT).show()
     }
 }

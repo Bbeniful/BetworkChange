@@ -28,7 +28,7 @@ class LiveDataUsageActivity : AppCompatActivity() {
          * This is how you can subscribe for live data and use the result
          * **/
         BetworkChecker.betWorkLiveCheck.observe(this, {
-            biding.liveDataText.text = getString(R.string.network_state, "$it")
+            biding.liveDataText.text = getString(R.string.network_state, it)
         })
 
         BetworkChecker.betWorkLiveType.observe(this, {

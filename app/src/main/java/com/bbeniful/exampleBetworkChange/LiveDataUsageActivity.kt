@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.bbeniful.betworklistener.listener.BetworkChecker
 import com.bbeniful.betworklistener.listener.BetworkChecker.Companion.type
-import com.bbeniful.testnetworkconnectioon.databinding.ActivityLiveDataBinding
+import com.bbeniful.exampleBetworkChange.databinding.ActivityLiveDataBinding
 
 class LiveDataUsageActivity : AppCompatActivity() {
 

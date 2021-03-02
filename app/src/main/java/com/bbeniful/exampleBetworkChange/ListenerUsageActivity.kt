@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bbeniful.betworklistener.enums.NetworkType
 import com.bbeniful.betworklistener.listener.BetworkChecker
-import com.bbeniful.testnetworkconnectioon.databinding.ActivityListenerBinding
+import com.bbeniful.exampleBetworkChange.databinding.ActivityListenerBinding
 
 class ListenerUsageActivity : AppCompatActivity(), BetworkChecker.ConnectivityReceiverListener {
 

@@ -1,5 +1,6 @@
 package com.bbeniful.betworklistener.listener
 
+import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -10,8 +11,10 @@ import androidx.lifecycle.MutableLiveData
 import com.bbeniful.betworklistener.enums.NetworkType
 
 
+@Suppress("SpellCheckingInspection")
 class BetworkChecker : BroadcastReceiver() {
 
+    @SuppressLint("UnsafeProtectedBroadcastReceiver")
     override fun onReceive(context: Context?, intent: Intent?) {
 
         if (connectivityReceiverListener != null) {
@@ -30,6 +33,7 @@ class BetworkChecker : BroadcastReceiver() {
         )
     }
 
+    @Suppress("DEPRECATION")
     private fun isNetworkAvailable(context: Context): Boolean {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -82,12 +86,16 @@ class BetworkChecker : BroadcastReceiver() {
         private var betWorkLiveCheck = MutableLiveData<Boolean>()
         private var betWorkLiveType = MutableLiveData<NetworkType>()
 
+        @JvmStatic
         fun getNetworkStateAsLiveData() = this.betWorkLiveCheck
 
+        @JvmStatic
         fun getNetworkTypeAsLiveData() = this.betWorkLiveType
 
+        @JvmStatic
         fun getConnectionListener() = this.connectivityReceiverListener
 
+        @JvmStatic
         fun setConnectionListener(connectivityReceiverListener: ConnectivityReceiverListener) {
             this.connectivityReceiverListener = connectivityReceiverListener
         }

@@ -9,7 +9,8 @@
     <application>
         <receiver
             android:name=".listener.BetworkChecker"
-            android:enabled="true">
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>

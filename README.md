@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/Bbeniful/BetworkChange.svg)](https://jitpack.io/#Bbeniful/BetworkChange)
+
 # BetworkChange
 
 This is a simple network state listener for Android. You have 2 options how you would like to watch the states of network.
